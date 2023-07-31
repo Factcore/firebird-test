@@ -1,0 +1,50 @@
+@import "../variables";
+
+.user{
+    border: 3px solid rgb(9, 124, 255);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    cursor: pointer;
+    
+    &:hover{
+        border: 3px solid rgb(0, 70, 151);
+        background-color: rgb(236, 236, 236);
+    }
+
+    .info{
+        grid-column: span 4;
+    }
+    .actions {
+        $removeColor : rgb(160, 0, 0);
+        $removeColorHover : red;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .remove-button{
+            border-color: $removeColor;
+            color: $removeColor;
+        }
+        .remove-button:hover{
+            border-color: $removeColorHover;
+            color: $removeColorHover;
+        }
+    }
+}
+
+@media(max-width: $mobileRes){
+    .user{
+        font-size: 1.2rem;
+        .info{
+            grid-column: span 5;
+            overflow-wrap: break-word;
+        }
+        .actions{
+            align-items: flex-end;
+            grid-column: span 5;
+        }
+    }
+}

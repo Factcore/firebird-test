@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.button {
+    border-radius: 10px;
+    padding:0.5rem 1rem;
+    width: 100px;
+    height: 40px;
+    border: 2px solid black;
+    background: white;
+    cursor: pointer;
+}
+
+@media(max-width: $mobileRes){
+    .button{
+        font-size: 1.1rem;
+    }
+}

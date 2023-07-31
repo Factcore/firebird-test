@@ -1,0 +1,61 @@
+@import "../variables";
+
+.filter {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: #efefef;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 10px;
+    .name {
+        grid-column: span 1;
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+    }
+    .field {
+        grid-column: 2 / span 3;
+        display: flex;
+        align-items: center;
+        input {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid #d4d4d4;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+    }
+    .actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        grid-column: 5 / span 1;
+        $filterColor: gray;
+        $filterColorHover: black;
+        .filter-button {
+            border-color: $filterColor;
+            color: $filterColor;
+        }
+        .filter-button:hover {
+            border-color: $filterColorHover;
+            color: $filterColorHover;
+        }
+    }
+}
+
+@media (max-width: $mobileRes) {
+    .filter {
+        .name {
+            grid-column: span 5;
+            overflow-wrap: break-word;
+        }
+        .field {
+            grid-column: span 5;
+        }
+        .actions {
+            grid-column: span 5;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@import "../../variables";
+.backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #0000003d;
+}
+.modal {
+    width: 500px;
+    min-height: 300px;
+    transform: translate(0, -50%);
+    top: 50%;
+    position: fixed;
+    border: 0;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 30px;
+    box-sizing: border-box;
+    .header {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        position: relative;
+        font-size: 1.5rem;
+        .title {
+            grid-column: span 7;
+
+            h3 {
+                font-size: inherit;
+                margin: 0;
+            }
+        }
+        .close {
+            grid-column: 9 / span 1;
+            background: #ebebeb;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            border-radius: 20px;
+            color: #8f8f8f;
+            cursor: pointer;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            &:hover {
+                color: black;
+                transition: 0.4s all ease;
+            }
+        }
+    }
+    .body {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: $mobileRes) {
+    .modal {
+        font-size: 1.2rem;
+        height: auto;
+        max-width: 86vw;
+    }
+}
